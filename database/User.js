@@ -8,9 +8,9 @@ const UserSchema = new mongoose.Schema(
     password: String,
     imageUrl: String,
     key: String,
-    myToDoList: [],
-    companyToDoList: [],
-    type: String
+    myToDoList: { type: [String], default: [] },
+    companyToDoList: { type: [String], default: [] },
+    type: { type: String, default: "user" }
   },
   {
     timestamps: true,
