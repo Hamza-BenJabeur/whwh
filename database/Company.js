@@ -8,13 +8,15 @@ const CompanySchema = new mongoose.Schema(
     password: String,
     imageUrl: String,
     key: String,
-    todos: [
-      {
-        name: String,
-        todo: String,
-      },
-    ],
-    type: String,
+    todos: {
+      type: [
+        {
+          name: String,
+          todo: String,
+        },
+      ], default: []
+    },
+    type: { type: String, default: "company" },
   },
   {
     timestamps: true,

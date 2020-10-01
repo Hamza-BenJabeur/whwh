@@ -12,7 +12,7 @@ class Home extends React.Component{
     }
     componen() {
         $.ajax({
-          url: `/getfriends`,
+          url: `/getfr`,
           type: "get",
           success: (res) => {
             this.setState({ array: res });
@@ -23,7 +23,15 @@ class Home extends React.Component{
         this.componen();
       }
     render(){
-        return <h1>HELLO WORLDDDD</h1>
+      var users = []
+      for(var i = 0 ; i < this.state.array.length ; i++){
+      users.push(<li key={i}>{this.state.array[i].name} </li>)
+      }
+        return <div id='main'>
+          <ul>
+            {users}
+          </ul>
+        </div>
     }
 }
 export default Home

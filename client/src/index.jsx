@@ -12,16 +12,18 @@ class App extends React.Component{
     }
     render(){
         return (
+            <div>
         <Router>
         <div>
             <Nav /> 
             <Switch>
-                <Route path='/' exact component={Home}/>
+                <Route path='/home' exact component={Home}/>
                 <Route path='/chat' component={Chat}/>
                 <Route path='/todo' component={Todo}/>
             </Switch>
         </div>
     </Router>
+    </div>
         )
     }
 }
